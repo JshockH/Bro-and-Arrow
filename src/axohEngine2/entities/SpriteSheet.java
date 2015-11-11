@@ -48,6 +48,7 @@ public class SpriteSheet extends Object {
      * @param scale - int to be multiplied by the sprite size for correct display
      **********************************************************************************/
     public SpriteSheet(String filename, int sheetWidth, int sheetHeight, int spriteSize, int scale) {
+    	
     	this.scale = scale;
     	this.spriteSize = spriteSize;
     	this.sheetHeight = sheetHeight;

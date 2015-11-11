@@ -117,6 +117,7 @@ public class Judgement extends Game {
 	//----------- Game  -----------------
 	//SpriteSheets (To be split in to multiple smaller sprites)
 	SpriteSheet extras1;
+	SpriteSheet extras1fist;
 	SpriteSheet zombie;//	SpriteSheet zombie;
 	
 	//ImageEntitys (Basic pictures)
@@ -171,12 +172,12 @@ public class Judgement extends Game {
 		playerSpeed = 6;
 		
 		//****Initialize spriteSheets*********************************************************************
-		extras1 = new SpriteSheet("/textures/extras/extras1.png", 8, 8, 32, scale);
-		//zombie = new SpriteSheet("/textures/characters/zombie.png", 8, 8, 32, scale);
+		//extras1 = new SpriteSheet("/textures/extras/extras1.png", 8, 8, 32, scale);
+		extras1fist = new SpriteSheet("/textures/extras/extras1fist.png", 8, 8, 32, scale);
 		zombie = new SpriteSheet("/textures/characters/zombie.png", 8, 8, 32, scale);
 
 		//****Initialize and setup AnimatedSprites*********************************************************
-		titleArrow = new AnimatedSprite(this, graphics(), extras1, 0, "arrow");
+		titleArrow = new AnimatedSprite(this, graphics(), extras1fist, 0, "arrow");
 		titleArrow.loadAnim(4, 10);
 		sprites().add(titleArrow);
 		
@@ -185,10 +186,10 @@ public class Judgement extends Game {
 		titleMenu = new ImageEntity(this);
 		titleMenu2 = new ImageEntity(this);
         controls = new ImageEntity(this);
-        inGameMenu.load("/menus/ingamemenu.png");
-		titleMenu.load("/menus/titlemenu1.png");
-		titleMenu2.load("/menus/titlemenu2.png");
-		controls.load("/menus/controls1.png");
+        inGameMenu.load("/menus/ingamemenu02.png");
+		titleMenu.load("/menus/titlemenu1new.png");
+		titleMenu2.load("/menus/titlemenu2new.png");
+		controls.load("/menus/controls1new.png");
         
         //*****Initialize Menus***************************************************************************
 		title = new TitleMenu(titleMenu, titleMenu2, controls, titleArrow, SCREENWIDTH, SCREENHEIGHT, simple, bold, bigBold);
@@ -213,6 +214,12 @@ public class Judgement extends Game {
 			if(mapBase.getMap(i) == null) continue;
 			if(mapBase.getMap(i).mapName() == "city") currentMap = mapBase.getMap(i);
 			if(mapBase.getMap(i).mapName() == "cityO") currentOverlay = mapBase.getMap(i);
+			if(mapBase.getMap(i).mapName() == "houses") currentMap = mapBase.getMap(i);
+			if(mapBase.getMap(i).mapName() == "housesO") currentOverlay = mapBase.getMap(i);
+			if(mapBase.getMap(i).mapName() == "insideHouse") currentMap = mapBase.getMap(i);
+			if(mapBase.getMap(i).mapName() == "insideHouseO") currentOverlay = mapBase.getMap(i);
+			if(mapBase.getMap(i).mapName() == "QU") currentMap = mapBase.getMap(i);
+			if(mapBase.getMap(i).mapName() == "QUO") currentOverlay = mapBase.getMap(i);
 		}
 		//Add the tiles from the map to be updated each system cycle
 		for(int i = 0; i < currentMap.getHeight() * currentMap.getHeight(); i++){
@@ -268,11 +275,11 @@ public class Judgement extends Game {
 			currentOverlay.render(this, g2d, mapX, mapY);
 			playerMob.renderMob(CENTERX - playerX, CENTERY - playerY);
 			//g2d.setColor(Color.GREEN);
-			//g2d.drawString("Health: " + inMenu.getHealth(), CENTERX - 650, CENTERY - 325);
+			//g2d.drawString("Health: " + inMenu.getHealth(), CENTERX - 650, CENTERY - 370);
 			//g2d.setColor(Color.MAGENTA);
-			//g2d.drawString("Magic: " + inMenu.getMagic(), CENTERX - 650, CENTERY - 370);
+			//g2d.drawString("Magic: " + inMenu.getMagic(), CENTERX - 650, CENTERY - 310);
 			//g2d.setColor(Color.RED);
-			//g2d.drawString("NPC health: " + currentOverlay.accessTile(98).mob().health(), CENTERX - 650, CENTERY - 275);
+			//g2d.drawString("NPC health: " + currentOverlay.accessTile(98).mob().health(), CENTERX - 650, CENTERY - 250);
 		}
 		if(State == State.INGAMEMENU){
 			//Render the in game menu and specific text
@@ -287,7 +294,7 @@ public class Judgement extends Game {
 		
 		//Render save time specific writing
 		if(option == OPTION.SAVE){
-			drawString(g2d, "Are you sure you\n      would like to save?", 660, 400);
+			drawString(g2d, "Are you sure you\n  would like to save?", 660, 400);
 		}
 		if(wasSaving && wait > 0) {
 			g2d.drawString("Game Saved!", 700, 500);

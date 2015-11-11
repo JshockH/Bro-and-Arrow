@@ -105,7 +105,7 @@ public class TitleMenu {
 		g2d.drawString("Controls", 660, 600);
 		g2d.setColor(Color.YELLOW);
 		g2d.setFont(_bigBold);
-		drawString(g2d, "The\n   Judgement", 500, 100);
+		//drawString(g2d, "Bro and Arrow", 500, 100);
 		g2d.drawImage(_titleArrow.getImage(), titleX, titleY, _titleArrow.getSpriteSize(), _titleArrow.getSpriteSize(), frame);
 		
 		if(_option == OPTION.NEWGAME || _option == OPTION.LOADGAME){
@@ -130,13 +130,13 @@ public class TitleMenu {
 			g2d.setColor(Color.BLACK);
 			g2d.setFont(_simple);
 			g2d.drawImage(_controls.getImage(), 0, 0, SCREENWIDTH, SCREENHEIGHT, frame);
-			g2d.drawString("Controls:", 400, 250);
-			g2d.drawString("W,A,S,D: Move charcter", 400, 600);
-			g2d.drawString("F: Open Chest/Swing Sword", 400, 700);
-			g2d.drawString("Spacebar: Unsheathe Sword", 400, 800);
-			g2d.drawString("Arrow Keys: Navigate menus", 400, 400);
-			g2d.drawString("Enter: Select option", 400, 500);
-			g2d.drawString("Backspace: exit", 700, 200);
+			g2d.drawString("Controls:", 350, 250);
+			g2d.drawString("W,A,S,D: Move charcter", 350, 600);
+			g2d.drawString("F: Open Chest/Swing Sword", 350, 700);
+			g2d.drawString("Spacebar: Unsheathe Sword", 350, 800);
+			g2d.drawString("Arrow Keys: Navigate menus", 350, 400);
+			g2d.drawString("Enter: Select option", 350, 500);
+			g2d.drawString("Backspace: exit", 500, 170);
 		}
 	}
 	

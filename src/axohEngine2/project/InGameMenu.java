@@ -243,6 +243,7 @@ public class InGameMenu {
 		if(_option == OPTION.MAGIC){
 			g2d.setColor(Color.BLACK);
 			g2d.drawString("Magic", 880, 200);
+			g2d.drawString("Bro flame", 600, 375);
 		}
 		if(_option == OPTION.QUIT){
 			g2d.setColor(Color.WHITE);
@@ -251,12 +252,15 @@ public class InGameMenu {
 		}
 		if(_option == OPTION.STATUS){
 			g2d.setColor(Color.BLACK);
-			g2d.drawString("Status", 920, 200);
-			g2d.drawString("Level: " + level, 600, 375);
-			g2d.drawString("Attack: " + attack, 600, 475);
-			g2d.drawString("Defense: " + defense, 600, 575);
-			g2d.drawString("Health: " + currHealth, 600, 675);
-			g2d.drawString("Experience: " + experience + " / " + nextLevel, 600, 775);
+			g2d.drawString("Bro the Hero", 880, 200);
+			g2d.drawString("Health: " + currHealth, 600, 375);
+			g2d.drawString("Magic: " + magic, 600, 475);
+			//g2d.drawString("Bro the Hero", 300, 200);
+			g2d.drawString("Level: " + level, 600, 575);
+			//g2d.drawString("Attack: " + attack, 600, 475);
+			//g2d.drawString("Defense: " + defense, 600, 575);
+			
+			//g2d.drawString("Experience: " + experience + " / " + nextLevel, 600, 775);
 		}
 		
 		if(_option == OPTION.SAVE){
